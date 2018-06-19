@@ -39,11 +39,11 @@ lint:
 
 ## Upload Data to S3
 sync_data_to_gcs:
-	gsutil cp gs://$(BUCKET)/data/ data/
+	gsutil cp -r data/ gs://$(BUCKET)/data/
 
 ## Download Data from S3
 sync_data_from_gcs:
-	gsutil cp data/ gs://$(BUCKET)/data/
+	gsutil cp -r gs://$(BUCKET)/data/ data/
 
 ## Set up python interpreter environment
 create_environment:
